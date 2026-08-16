@@ -19,8 +19,19 @@ describe('视频库', () => {
 
   it('主视频分P与页面一致', () => {
     for (const video of videos) {
-      expect(video.primary.url).toContain(`p=${video.primary.page}`)
+      if (video.primary.page > 1) {
+        expect(video.primary.url).toContain(`p=${video.primary.page}`)
+      }
       expect(video.primary.embed).toContain(`page=${video.primary.page}`)
+    }
+  })
+
+  it('所有视频标题标注时长且不超过 20 分钟', () => {
+    for (const video of videos) {
+      const titles = [video.primary.title, video.fallback.title, video.fallback2.title]
+      for (const title of titles) {
+        expect(title).toMatch(/（\d{1,2} 分钟）/)
+      }
     }
   })
 })

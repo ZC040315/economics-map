@@ -1,8 +1,9 @@
 import { useMemo } from 'react'
 import { curriculum, flattenChapters } from '../data/chapters'
 import { overallStats } from '../lib/progress'
+import PlayerStats from './PlayerStats'
 
-export default function Header({ progress, dueCount }) {
+export default function Header({ progress, dueCount, game }) {
   const allCards = useMemo(
     () => flattenChapters(curriculum).flatMap((chapter) => chapter.cards),
     [],
@@ -39,6 +40,7 @@ export default function Header({ progress, dueCount }) {
           <dd>{dueCount}</dd>
         </div>
       </dl>
+      <PlayerStats game={game} />
     </header>
   )
 }

@@ -1,0 +1,32 @@
+:root {
+  /* 颜色 */
+  --color-bg: #f7f4ee;
+  --color-surface: #ffffff;
+  --color-text: #23262d;
+  --color-text-muted: #6d6f78;
+  --color-border: #e6e1d6;
+  --color-accent: #b7791f;
+  --color-learning: #2563eb;
+  --color-mastered: #16803c;
+  --color-review: #d97706;
+  --color-muted: #9aa0a6;
+  --color-selected: #f3ead8;
+
+  /* 字体 */
+  --font-display: "Songti SC", "STSong", Georgia, "Noto Serif SC", serif;
+  --font-body: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui,
+    sans-serif;
+
+  /* 尺寸 */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --shadow-soft: 0 1px 3px rgba(35, 38, 45, 0.08);
+}

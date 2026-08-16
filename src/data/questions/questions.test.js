@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { DIFFICULTY_ORDER, questionBanks, questionsForChapter } from './index'
 
 const VALID_DIFFICULTIES = ['basic', 'advanced', 'challenge']
-const VALID_TYPES = ['choice', 'truefalse', 'essay']
+const VALID_TYPES = ['choice', 'truefalse', 'essay', 'report']
 
 describe('分层题库', () => {
   it('7 章都有题库，每章至少 10 题', () => {
@@ -69,6 +69,33 @@ describe('分层题库', () => {
       )
       expect(challenge.some((q) => q.type === 'essay')).toBe(true)
       expect(challenge.some((q) => q.image)).toBe(true)
+    }
+  })
+
+  it('每章至少 5 道报表分析题', () => {
+    for (const bank of questionBanks) {
+      const reportCount = bank.questions.filter((q) => q.type === 'report').length
+      expect(reportCount, `${bank.chapterId} 报表题不足 5 道`).toBeGreaterThanOrEqual(5)
+    }
+  })
+
+  it('报表题结构完整：表格 + 作答方式', () => {
+    for (const bank of questionBanks) {
+      for (const q of bank.questions.filter((item) => item.type === 'report')) {
+        expect(q.table.title).toBeTruthy()
+        expect(q.table.columns.length).toBeGreaterThanOrEqual(2)
+        expect(q.table.rows.length).toBeGreaterThanOrEqual(2)
+        expect(q.table.rows[0].length).toBe(q.table.columns.length)
+        expect(['choice', 'essay']).toContain(q.answerMode)
+        if (q.answerMode === 'choice') {
+          expect(q.options.length).toBeGreaterThanOrEqual(3)
+          expect(q.answer).toBeGreaterThanOrEqual(0)
+          expect(q.answer).toBeLessThan(q.options.length)
+          expect(q.explanation).toBeTruthy()
+        } else {
+          expect(q.reference).toBeTruthy()
+        }
+      }
     }
   })
 

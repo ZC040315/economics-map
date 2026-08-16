@@ -183,6 +183,34 @@ function EssayBody({ question, onAnswer }) {
   )
 }
 
+function DataTable({ table }) {
+  return (
+    <figure className="data-table">
+      <figcaption className="data-table__title">{table.title}</figcaption>
+      <div className="data-table__wrap">
+        <table>
+          <thead>
+            <tr>
+              {table.columns.map((col) => (
+                <th key={col}>{col}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </figure>
+  )
+}
+
 export default function QuestionCard({ question, index, result, onAnswer }) {
   const hasMastered = result?.correct
   const typeLabel =
@@ -190,7 +218,9 @@ export default function QuestionCard({ question, index, result, onAnswer }) {
       ? '选择题'
       : question.type === 'truefalse'
         ? '判断题'
-        : '问答题'
+        : question.type === 'report'
+          ? '报表分析'
+          : '问答题'
 
   return (
     <article className="question-card">
@@ -202,6 +232,7 @@ export default function QuestionCard({ question, index, result, onAnswer }) {
         </span>
         <span className="question-card__type">{typeLabel}</span>
         {question.image && <span className="question-card__image-tag">图片分析</span>}
+        {question.table && <span className="question-card__image-tag">报表分析</span>}
         {hasMastered && (
           <span className="question-card__done" title="已掌握">
             已掌握
@@ -215,11 +246,16 @@ export default function QuestionCard({ question, index, result, onAnswer }) {
       {question.image && (
         <Chart image={question.image} caption={question.imageCaption} />
       )}
+      {question.table && <DataTable table={question.table} />}
       {question.type === 'choice' && <ChoiceBody question={question} onAnswer={onAnswer} />}
+      {question.type === 'report' && question.answerMode === 'choice' && (
+        <ChoiceBody question={question} onAnswer={onAnswer} />
+      )}
       {question.type === 'truefalse' && (
         <TrueFalseBody question={question} onAnswer={onAnswer} />
       )}
-      {question.type === 'essay' && (
+      {(question.type === 'essay' ||
+        (question.type === 'report' && question.answerMode === 'essay')) && (
         <EssayBody question={question} onAnswer={onAnswer} />
       )}
     </article>

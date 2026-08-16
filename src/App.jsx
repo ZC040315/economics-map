@@ -7,6 +7,7 @@ import ReviewBanner from './components/ReviewBanner'
 import ReviewSession from './components/ReviewSession'
 import AchievementsPanel from './components/AchievementsPanel'
 import AchievementToast from './components/AchievementToast'
+import SkillsSection from './components/SkillsSection'
 import useProgress from './hooks/useProgress'
 import useGame from './hooks/useGame'
 import { dueCards } from './lib/progress'
@@ -14,6 +15,7 @@ import { dueCards } from './lib/progress'
 export default function App() {
   const [selectedId, setSelectedId] = useState('micro-01')
   const [reviewQueue, setReviewQueue] = useState(null)
+  const [view, setView] = useState('map')
   const [toasts, setToasts] = useState([])
   const { progress, record } = useProgress()
   const { game, recordAnswer, completeSession } = useGame()
@@ -60,17 +62,28 @@ export default function App() {
       <Header progress={progress} dueCount={dueQueue.length} game={game} />
       <main className="layout">
         <aside className="map-panel">
+          <button
+            type="button"
+            className={`view-switch${view === 'skills' ? ' view-switch--active' : ''}`}
+            onClick={() => setView(view === 'skills' ? 'map' : 'skills')}
+          >
+            {view === 'skills' ? '← 返回知识地图' : '现实决策场景库 →'}
+          </button>
           <ReviewBanner dueCount={dueQueue.length} onStart={startReview} />
-          {curriculum.map((track) => (
-            <MapTree
-              key={track.id}
-              track={track}
-              selectedId={selectedId}
-              progress={progress}
-              onSelect={setSelectedId}
-            />
-          ))}
-          <AchievementsPanel game={game} />
+          {view === 'map' && (
+            <>
+              {curriculum.map((track) => (
+                <MapTree
+                  key={track.id}
+                  track={track}
+                  selectedId={selectedId}
+                  progress={progress}
+                  onSelect={setSelectedId}
+                />
+              ))}
+              <AchievementsPanel game={game} />
+            </>
+          )}
         </aside>
         <section className="detail-panel">
           {reviewQueue ? (
@@ -80,12 +93,19 @@ export default function App() {
               onFinish={finishReview}
             />
           ) : selected ? (
-            <ChapterDetail
-              chapter={selected}
-              progress={progress}
-              onAnswer={handleAnswer}
-              onQuestionAnswer={handleQuestionAnswer}
-            />
+            view === 'skills' ? (
+              <SkillsSection
+                progress={progress}
+                onAnswer={handleQuestionAnswer}
+              />
+            ) : (
+              <ChapterDetail
+                chapter={selected}
+                progress={progress}
+                onAnswer={handleAnswer}
+                onQuestionAnswer={handleQuestionAnswer}
+              />
+            )
           ) : (
             <div className="empty-state">
               <p>点击左侧章节，开始回忆。</p>

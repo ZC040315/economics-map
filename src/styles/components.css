@@ -1071,6 +1071,72 @@
   filter: brightness(1.08);
 }
 
+.view-switch {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.15s ease;
+}
+
+.view-switch:hover {
+  border-color: var(--color-accent);
+  background: rgba(183, 121, 31, 0.05);
+}
+
+.view-switch--active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.skills-section__desc {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--color-accent);
+  background: rgba(183, 121, 31, 0.06);
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.life-skill-card__question {
+  margin: var(--space-2) 0 0;
+  font-size: 15px;
+}
+
+.life-skill-card__reveal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.life-skill-card__action {
+  padding: var(--space-4);
+  border-left: 3px solid var(--color-mastered);
+  background: rgba(22, 128, 60, 0.06);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.life-skill-card__action-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-mastered);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-1);
+}
+
+.life-skill-card__action p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
 .review-session__head {
   display: flex;
   align-items: baseline;

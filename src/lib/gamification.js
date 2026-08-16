@@ -3,6 +3,7 @@ import { chapterMastery, recordAnswer } from './progress'
 
 const GAME_KEY = 'economics-map:v1:gamification'
 export const LEVEL_STEP = 100
+export const DIFFICULTY_XP = { basic: 5, advanced: 10, challenge: 15 }
 
 export const ACHIEVEMENTS = [
   { id: 'first-card', title: '破冰者', desc: '答对第一张卡', icon: '❄' },
@@ -52,14 +53,15 @@ export function levelProgress(xp) {
   return xp % LEVEL_STEP
 }
 
-export function xpForAnswer(prevProgress, cardId, isCorrect) {
+export function xpForAnswer(prevProgress, cardId, isCorrect, difficulty) {
   if (!isCorrect) return 0
   const wasCorrectBefore = prevProgress?.[cardId]?.correct === true
-  return wasCorrectBefore ? 5 : 10
+  if (wasCorrectBefore) return 5
+  return DIFFICULTY_XP[difficulty] ?? 10
 }
 
-export function applyAnswer(game, prevProgress, cardId, isCorrect) {
-  const gain = xpForAnswer(prevProgress, cardId, isCorrect)
+export function applyAnswer(game, prevProgress, cardId, isCorrect, difficulty) {
+  const gain = xpForAnswer(prevProgress, cardId, isCorrect, difficulty)
   const xp = game.xp + gain
   const answeredCardIds =
     isCorrect && !game.answeredCardIds.includes(cardId)

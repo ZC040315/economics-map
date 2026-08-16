@@ -1,6 +1,7 @@
 import PlaceholderCard from './PlaceholderCard'
 import RecallCard from './RecallCard'
 import VideoSection from './VideoSection'
+import PracticeSection from './PracticeSection'
 import { chapterMastery } from '../lib/progress'
 
 const CARD_SLOTS = [
@@ -9,7 +10,12 @@ const CARD_SLOTS = [
   { type: 'quiz', title: '速测题', hint: '一道选择题，先答再看答案' },
 ]
 
-export default function ChapterDetail({ chapter, progress, onAnswer }) {
+export default function ChapterDetail({
+  chapter,
+  progress,
+  onAnswer,
+  onQuestionAnswer,
+}) {
   const mastery = chapterMastery(chapter.cards, progress)
   const answeredCount = chapter.cards.filter(
     (card) => progress[card.id]?.attempts > 0,
@@ -53,8 +59,13 @@ export default function ChapterDetail({ chapter, progress, onAnswer }) {
           ))}
         </div>
       )}
+      <PracticeSection
+        chapterId={chapter.id}
+        progress={progress}
+        onAnswer={onQuestionAnswer}
+      />
       <p className="chapter-detail__note">
-        答对的速测题会记入本地，刷新后进度不丢；地图上的掌握度会实时更新。
+        答对的速测题与练习题会记入本地，刷新后进度不丢；判定结果统一进入复习队列。
       </p>
     </article>
   )

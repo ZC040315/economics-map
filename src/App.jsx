@@ -38,6 +38,18 @@ export default function App() {
     record(cardId, isCorrect)
     showToasts(recordAnswer(progress, cardId, isCorrect, allChapters))
   }
+  const handleQuestionAnswer = (question, isCorrect) => {
+    record(question.id, isCorrect)
+    showToasts(
+      recordAnswer(
+        progress,
+        question.id,
+        isCorrect,
+        allChapters,
+        question.difficulty,
+      ),
+    )
+  }
   const finishReview = () => {
     showToasts(completeSession(allChapters))
     setReviewQueue(null)
@@ -72,6 +84,7 @@ export default function App() {
               chapter={selected}
               progress={progress}
               onAnswer={handleAnswer}
+              onQuestionAnswer={handleQuestionAnswer}
             />
           ) : (
             <div className="empty-state">

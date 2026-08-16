@@ -41,6 +41,16 @@ describe('游戏化', () => {
     expect(applyAnswer(game, {}, 'b', false).xp).toBe(0)
   })
 
+  it('难度影响首次答对经验值', () => {
+    const game = { xp: 0, level: 1, answeredCardIds: [] }
+    expect(applyAnswer(game, {}, 'a', true, 'basic').xp).toBe(5)
+    expect(applyAnswer(game, {}, 'a', true, 'advanced').xp).toBe(10)
+    expect(applyAnswer(game, {}, 'a', true, 'challenge').xp).toBe(15)
+    // 复习答对统一 +5
+    const reviewed = { xp: 0, level: 1, answeredCardIds: ['a'] }
+    expect(applyAnswer(reviewed, { a: { correct: true } }, 'a', true, 'challenge').xp).toBe(5)
+  })
+
   it('完成复习会话 +10 并记录日期', () => {
     const game = { xp: 0, level: 1, reviewDays: [], reviewSessions: 0 }
     const date = new Date('2026-08-16T12:00:00')

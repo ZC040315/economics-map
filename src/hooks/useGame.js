@@ -30,9 +30,15 @@ export default function useGame() {
   }, [])
 
   const recordAnswer = useCallback(
-    (progress, cardId, isCorrect, chapters) => {
+    (progress, cardId, isCorrect, chapters, difficulty) => {
       const nextProgress = nextProgressAfterAnswer(progress, cardId, isCorrect)
-      const afterXp = applyAnswer(gameRef.current, progress, cardId, isCorrect)
+      const afterXp = applyAnswer(
+        gameRef.current,
+        progress,
+        cardId,
+        isCorrect,
+        difficulty,
+      )
       const unlocked = evaluateAchievements(nextProgress, afterXp, chapters)
       return commit(afterXp, unlocked)
     },

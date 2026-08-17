@@ -18,7 +18,7 @@ export default function App() {
   const [view, setView] = useState('map')
   const [toasts, setToasts] = useState([])
   const { progress, record } = useProgress()
-  const { game, recordAnswer, completeSession } = useGame()
+  const { game, recordAnswer, completeSession, earnXp } = useGame()
   const selected =
     flattenChapters(curriculum).find((c) => c.id === selectedId) ?? null
 
@@ -97,6 +97,7 @@ export default function App() {
               <SkillsSection
                 progress={progress}
                 onAnswer={handleQuestionAnswer}
+                onEarnXp={earnXp}
               />
             ) : (
               <ChapterDetail

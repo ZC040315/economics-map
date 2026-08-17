@@ -4,6 +4,7 @@ import {
   completeReviewSession,
   evaluateAchievements,
   loadGame,
+  levelFromXp,
   nextProgressAfterAnswer,
   saveGame,
 } from '../lib/gamification'
@@ -54,5 +55,19 @@ export default function useGame() {
     [commit],
   )
 
-  return { game, recordAnswer, completeSession }
+  const earnXp = useCallback(
+    (amount) => {
+      const next = {
+        ...gameRef.current,
+        xp: gameRef.current.xp + amount,
+      }
+      next.level = levelFromXp(next.xp)
+      gameRef.current = next
+      saveGame(next)
+      setGame(next)
+    },
+    [],
+  )
+
+  return { game, recordAnswer, completeSession, earnXp }
 }

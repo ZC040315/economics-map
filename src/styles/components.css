@@ -1137,6 +1137,200 @@
   line-height: 1.65;
 }
 
+.skills-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skills-tabs__tab {
+  padding: var(--space-2) var(--space-4);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.skills-tabs__tab:hover {
+  color: var(--color-accent);
+}
+
+.skills-tabs__tab--active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.decision-tool__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.decision-tool__saved {
+  flex: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-mastered);
+  background: rgba(22, 128, 60, 0.1);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.decision-form {
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.decision-form__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.decision-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.decision-form__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.decision-form__field input,
+.decision-form__field textarea {
+  font-family: inherit;
+  font-size: 15px;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  resize: vertical;
+}
+
+.decision-form__field input:focus,
+.decision-form__field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.decision-form__hint {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.decision-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.decision-form__submit {
+  align-self: flex-start;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.decision-form__submit:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.decision-form__submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.decision-log {
+  margin-top: var(--space-6);
+}
+
+.decision-log__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.decision-log__item {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.decision-log__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.decision-log__title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.decision-log__date {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.decision-log__remove {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.decision-log__remove:hover {
+  color: var(--color-review);
+}
+
+.decision-log__options {
+  margin: var(--space-2) 0 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.decision-log__line {
+  margin: var(--space-2) 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.decision-log__line strong {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.decision-log__empty {
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
 .review-session__head {
   display: flex;
   align-items: baseline;
@@ -1215,6 +1409,10 @@
   .header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .decision-form__row {
+    grid-template-columns: 1fr;
   }
 
   .player-stats {

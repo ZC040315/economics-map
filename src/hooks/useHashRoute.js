@@ -18,10 +18,17 @@ export function parseHash(hash) {
   if (segments[0] === 'knowledge' && segments[1]) {
     return { name: 'knowledge', path, params: { id: segments[1] }, query }
   }
+  if (segments[0] === 'test' && segments[1] === 'chapter' && segments[2]) {
+    return { name: 'test-chapter', path, params: { id: segments[2] }, query }
+  }
+  if (segments[0] === 'test' && segments[1] === 'weekly') {
+    return { name: 'test-weekly', path, params: {}, query }
+  }
   const known = {
     map: 'map',
     review: 'review',
     skills: 'skills',
+    test: 'test',
   }
   const name = known[segments[0]] ?? 'home'
   return { name, path: `/${segments[0] ?? ''}`.replace(/\/$/, '') || '/', params: {}, query }

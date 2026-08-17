@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { path: '/map', label: '知识地图', match: (route) => route.name === 'map' || route.name === 'chapter' || route.name === 'knowledge' },
   { path: '/review', label: '复习', match: (route) => route.name === 'review' },
   { path: '/skills', label: '现实能力', match: (route) => route.name === 'skills' },
+  { path: '/test', label: '测试中心', match: (route) => route.name.startsWith('test') },
 ]
 
 export default function NavBar({ route, progress, dueCount, game, theme, onToggleTheme }) {

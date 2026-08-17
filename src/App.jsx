@@ -9,6 +9,8 @@ import KnowledgePage from './components/KnowledgePage'
 import ReviewBanner from './components/ReviewBanner'
 import ReviewSession from './components/ReviewSession'
 import ReviewHome from './components/ReviewHome'
+import TestCenter from './components/TestCenter'
+import TestSession from './components/TestSession'
 import AchievementsPanel from './components/AchievementsPanel'
 import AchievementToast from './components/AchievementToast'
 import SkillsSection from './components/SkillsSection'
@@ -17,6 +19,8 @@ import useGame from './hooks/useGame'
 import useTheme from './hooks/useTheme'
 import useHashRoute, { parseHash } from './hooks/useHashRoute'
 import { dueCards } from './lib/progress'
+import { chapterQuiz, weeklyQuiz } from './lib/quiz-builder'
+import { saveTestResult } from './lib/test-history'
 
 function rememberChapter(chapterId) {
   try {
@@ -28,6 +32,7 @@ function rememberChapter(chapterId) {
 
 export default function App() {
   const [reviewQueue, setReviewQueue] = useState(null)
+  const [testSession, setTestSession] = useState(null)
   const [toasts, setToasts] = useState([])
   const { progress, record } = useProgress()
   const { game, recordAnswer, completeSession, earnXp } = useGame()
@@ -78,6 +83,40 @@ export default function App() {
     navigate(`/chapter/${id}`)
   }
 
+  const startChapterTest = (chapterId) => {
+    setTestSession({
+      type: 'chapter',
+      chapterId,
+      chapterTitle: allChapters.find((c) => c.id === chapterId)?.title,
+      questions: chapterQuiz(chapterId),
+    })
+    navigate(`/test/chapter/${chapterId}`)
+  }
+
+  const startWeeklyTest = () => {
+    setTestSession({
+      type: 'weekly',
+      chapterTitle: '周测 · 综合卷',
+      questions: weeklyQuiz(),
+    })
+    navigate('/test/weekly')
+  }
+
+  const finishTest = (answers) => {
+    if (!testSession) return
+    saveTestResult({
+      type: testSession.type,
+      chapterTitle: testSession.chapterTitle,
+      total: answers.length,
+      correct: answers.filter((a) => a.correct).length,
+    })
+  }
+
+  const exitTest = () => {
+    setTestSession(null)
+    navigate('/test')
+  }
+
   const isKnowledgeView = route.name === 'knowledge'
 
   return (
@@ -102,6 +141,35 @@ export default function App() {
             onAnswer={handleQuestionAnswer}
             onEarnXp={earnXp}
           />
+        </main>
+      )}
+
+      {route.name === 'test' && (
+        <main className="container page-skills">
+          <TestCenter
+            progress={progress}
+            onReanswer={handleAnswer}
+            onStartChapter={startChapterTest}
+            onStartWeekly={startWeeklyTest}
+          />
+        </main>
+      )}
+
+      {(route.name === 'test-chapter' || route.name === 'test-weekly') && (
+        <main className="container page-skills">
+          {testSession ? (
+            <TestSession
+              title={testSession.chapterTitle}
+              questions={testSession.questions}
+              onAnswer={handleAnswer}
+              onFinish={finishTest}
+              onExit={exitTest}
+            />
+          ) : (
+            <div className="empty-state">
+              <p>请从测试中心开始。</p>
+            </div>
+          )}
         </main>
       )}
 
@@ -169,6 +237,7 @@ function MobileNav({ route }) {
     { path: '/map', label: '地图', icon: '◈' },
     { path: '/review', label: '复习', icon: '↻' },
     { path: '/skills', label: '能力', icon: '✦' },
+    { path: '/test', label: '测试', icon: '✎' },
   ]
   return (
     <nav className="mobile-nav" aria-label="移动端导航">

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import LifeSkillCard from './LifeSkillCard'
 import DecisionTool from './DecisionTool'
+import SkillMap from './SkillMap'
 import { SKILLS, lifeSkillsFor } from '../data/life-skills'
 
 export default function SkillsSection({ progress, onAnswer, onEarnXp }) {
@@ -47,6 +48,7 @@ export default function SkillsSection({ progress, onAnswer, onEarnXp }) {
         <DecisionTool onEarnXp={onEarnXp} />
       ) : (
         <>
+      <SkillMap progress={progress} />
       <header className="practice__head">
         <div>
           <h2 className="practice__title">现实决策场景库</h2>

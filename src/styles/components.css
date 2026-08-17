@@ -1163,6 +1163,106 @@
   border-bottom-color: var(--color-accent);
 }
 
+.skill-map {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.skill-map__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.skill-map__count {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.skill-map__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.skill-map__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  text-align: center;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-map__item--unlocked {
+  opacity: 1;
+  border-color: rgba(183, 121, 31, 0.45);
+  background: rgba(183, 121, 31, 0.06);
+}
+
+.skill-map__icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.skill-map__name {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.skill-map__bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #ece7dc;
+  overflow: hidden;
+}
+
+.skill-map__bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-accent), #d99a3d);
+  transition: width 0.4s ease;
+}
+
+.skill-map__meta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.skill-map__badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.skill-map__badge--on {
+  color: var(--color-accent);
+}
+
+.skill-map__toast {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: rgba(183, 121, 31, 0.12);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  animation: toast-in 0.25s ease;
+}
+
 .decision-tool__head {
   display: flex;
   align-items: flex-start;

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import LifeSkillCard from './LifeSkillCard'
 import DecisionTool from './DecisionTool'
 import SkillMap from './SkillMap'
+import ArenaSection from './ArenaSection'
 import { SKILLS, lifeSkillsFor } from '../data/life-skills'
 
 export default function SkillsSection({ progress, onAnswer, onEarnXp }) {
@@ -43,8 +44,21 @@ export default function SkillsSection({ progress, onAnswer, onEarnXp }) {
         >
           决策必做动作
         </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'arenas'}
+          className={`skills-tabs__tab${
+            tab === 'arenas' ? ' skills-tabs__tab--active' : ''
+          }`}
+          onClick={() => setTab('arenas')}
+        >
+          反击擂台
+        </button>
       </div>
-      {tab === 'decisions' ? (
+      {tab === 'arenas' ? (
+        <ArenaSection progress={progress} onAnswer={onAnswer} />
+      ) : tab === 'decisions' ? (
         <DecisionTool onEarnXp={onEarnXp} />
       ) : (
         <>

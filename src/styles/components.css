@@ -2509,3 +2509,141 @@
   font-size: 12px;
   color: var(--color-text-3);
 }
+
+/* ============================================================
+   ArenaSection · 反击擂台
+   ============================================================ */
+.arena-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.arena-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.arena-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.arena-card__tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.arena-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.arena-card__scene {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.arena-card__situation {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.arena-card__question,
+.arena-card__move {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-2);
+}
+
+.arena-card__question strong,
+.arena-card__move strong {
+  color: var(--color-text);
+}
+
+.arena-card__write {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.arena-card__write .decision-form__field {
+  width: 100%;
+}
+
+.arena-card__reveal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.arena-card__your-answer {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.arena-card__points {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.arena-card__points-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-review);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-2);
+}
+
+.arena-card__points ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arena-card__points li {
+  font-size: 14px;
+  line-height: 1.65;
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.arena-card__points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-review);
+}

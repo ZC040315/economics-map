@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { DIFFICULTY_ORDER, questionBanks, questionsForChapter } from './index'
+import { curriculum } from '../chapters'
+
+const LETTERS = ['A', 'B', 'C', 'D']
 
 const VALID_DIFFICULTIES = ['basic', 'advanced', 'challenge']
 const VALID_TYPES = ['choice', 'truefalse', 'essay', 'report']
@@ -103,5 +106,33 @@ describe('分层题库', () => {
     expect(DIFFICULTY_ORDER).toEqual(['basic', 'advanced', 'challenge'])
     expect(questionsForChapter('micro-01').length).toBeGreaterThan(0)
     expect(questionsForChapter('micro-99')).toEqual([])
+  })
+
+  it('选择题答案分布不严重偏向某一选项（防“全 B”）', () => {
+    const answers = []
+    // 回忆卡速测
+    for (const track of curriculum) {
+      for (const chapter of track.chapters) {
+        for (const card of chapter.cards) {
+          if (card.quiz) answers.push(card.quiz.answer)
+        }
+      }
+    }
+    // 题库选择题
+    for (const bank of questionBanks) {
+      for (const q of bank.questions) {
+        if (q.type === 'choice' || (q.type === 'report' && q.answerMode === 'choice')) {
+          answers.push(q.answer)
+        }
+      }
+    }
+    const counts = { A: 0, B: 0, C: 0, D: 0 }
+    for (const a of answers) counts[LETTERS[a]]++
+    const total = answers.length
+    const maxRatio = Math.max(...Object.values(counts)) / total
+    const usedLetters = Object.values(counts).filter((n) => n > 0).length
+    expect(total).toBeGreaterThan(50)
+    expect(usedLetters).toBeGreaterThanOrEqual(3)
+    expect(maxRatio).toBeLessThan(0.5)
   })
 })

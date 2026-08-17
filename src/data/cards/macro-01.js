@@ -6,6 +6,12 @@ export default [
     recall: '一国一年内新生产出来的所有最终东西，用钱加总。',
     definition: 'GDP = 一个国家在特定时期内，在本国境内生产的全部最终物品与服务的市场价值总和。',
     example: '去年全国新生产的手机、理发、外卖、修车……全部加起来，就是那年的 GDP。',
+    formula: 'GDP = 一定时期内境内生产的最终品与服务的市场价值',
+    keyPoint: '四个关键词：一定时期、境内、最终品、市场价值，缺一不可。',
+    mistake: '把二手交易、进口品、中间品算进 GDP（都不该算）。',
+    related: ['macro-01-02', 'micro-01-08'],
+    image: 'gdp',
+    imageCaption: 'GDP = C + I + G + NX',
     quiz: {
       question: 'GDP 统计的是哪部分价值？',
       options: [
@@ -24,6 +30,12 @@ export default [
     recall: '消费、投资、政府购买、净出口。',
     definition: 'GDP = 消费 + 投资 + 政府购买 + 净出口（出口 − 进口）。每一笔最终支出都被这四类中的一类记下。',
     example: '你买奶茶算消费；公司买新设备算投资；政府修路算政府购买；卖给外国人的商品算净出口。',
+    formula: 'GDP = C + I + G + NX',
+    keyPoint: '支出法四类：消费、投资、政府购买、净出口——背下公式就能拆解任何支出。',
+    mistake: '把买股票/二手房当「投资」；投资指购买资本品，不是金融交易。',
+    related: ['macro-01-01', 'macro-01-03'],
+    image: 'gdp',
+    imageCaption: '支出法构成（示意）',
     quiz: {
       question: '下面哪一项属于 GDP 中的「投资」？',
       options: [
@@ -42,6 +54,10 @@ export default [
     recall: '面粉和面包不能算两遍。',
     definition: '为避免重复计算，GDP 只统计最终产品，中间品价值已包含在最终品价格里。',
     example: '小麦 → 面粉 → 面包，GDP 只算面包的售价（小麦、面粉的价值已经含在里面），不把三样都加一遍。',
+    formula: 'GDP = 各环节新增价值之和 = 最终品市场价值',
+    keyPoint: '只算最终品 = 避免重复计算；等价于加总每个环节的「增加值」。',
+    mistake: '把中间品单独加一遍导致重复计算。',
+    related: ['macro-01-01', 'macro-01-04'],
     quiz: {
       question: 'GDP 只算最终品，原因是什么？',
       options: [
@@ -60,6 +76,10 @@ export default [
     recall: '涨价造成的虚胖，要挤掉水分看真实产出。',
     definition: '名义 GDP 用当年价格算（含涨价水分）；实际 GDP 用固定年份价格算，挤掉物价变化，反映真实生产量。',
     example: '产量没变，但所有价格翻倍——名义 GDP 翻倍看着很猛，实际 GDP 没变，说明经济并没有真的变强。',
+    formula: '实际 GDP = 名义 GDP ÷ 价格指数（GDP 平减指数）',
+    keyPoint: '比真实产出看实际 GDP；名义增长可能只是涨价。',
+    mistake: '用名义 GDP 比较两年真实产出；忽略通胀。',
+    related: ['macro-01-01', 'macro-03-01'],
     quiz: {
       question: '想比较两年间「真实生产量」的变化，该看哪个？',
       options: [
@@ -78,6 +98,10 @@ export default [
     recall: 'GDP 高不代表一定幸福。',
     definition: 'GDP 不衡量闲暇、环境质量、收入分配、家务等非市场活动，也不能完全代表生活质量。',
     example: '两个国家 GDP 相同，一个大家拼命加班、空气很差，另一个工作轻松、环境好——GDP 看不出来差别。',
+    formula: '真实福利 ≈ GDP + 闲暇 + 环境 − 污染成本 − 收入不平等',
+    keyPoint: 'GDP 是产出指标不是幸福指标；批评 GDP 要说清它漏了什么。',
+    mistake: '把 GDP 高低直接等同于生活质量好坏。',
+    related: ['micro-01-08', 'macro-01-04'],
     quiz: {
       question: 'GDP 不能衡量什么？',
       options: [

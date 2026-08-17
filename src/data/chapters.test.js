@@ -44,6 +44,25 @@ describe('章节数据', () => {
         expect(card.quiz.answer).toBeGreaterThanOrEqual(0)
         expect(card.quiz.answer).toBeLessThan(card.quiz.options.length)
         expect(card.quiz.explanation).toBeTruthy()
+        expect(card.formula).toBeTruthy()
+        expect(card.keyPoint).toBeTruthy()
+        expect(card.mistake).toBeTruthy()
+        expect(Array.isArray(card.related)).toBe(true)
+      }
+    }
+  })
+
+  it('相关知识引用有效且不指向自身', () => {
+    const chapters = flattenChapters(curriculum).filter((c) => c.cards.length > 0)
+    const allIds = new Set(
+      chapters.flatMap((c) => c.cards.map((card) => card.id)),
+    )
+    for (const chapter of chapters) {
+      for (const card of chapter.cards) {
+        for (const rel of card.related ?? []) {
+          expect(allIds.has(rel), `无效相关知识：${card.id} → ${rel}`).toBe(true)
+          expect(rel).not.toBe(card.id)
+        }
       }
     }
   })

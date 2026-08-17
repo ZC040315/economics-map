@@ -6,6 +6,12 @@ export default [
     recall: '想找工作却没找到的人，占劳动力的比例。',
     definition: '失业率 = 失业人数 ÷ 劳动力人数。劳动力 = 就业者 + 失业者；不找工作的人（如全职学生、主动退出）不算失业。',
     example: '100 个人里，60 人在上班、10 人正在找工作、30 人不找工作——失业率是 10 ÷ 70 ≈ 14.3%。',
+    formula: '失业率 = 失业人数 ÷ 劳动力 × 100%；劳动力 = 就业 + 失业',
+    keyPoint: '分子分母都要用「劳动力」，不是总人口。',
+    mistake: '把「不找工作的人」算进失业者或劳动力。',
+    related: ['macro-04-05'],
+    image: 'unemployment',
+    imageCaption: '失业的三种类型',
     quiz: {
       question: '下面哪个人被算进「失业者」？',
       options: [
@@ -24,6 +30,12 @@ export default [
     recall: '换工作路上的短暂空档。',
     definition: '摩擦性失业是工人与岗位匹配需要时间造成的短期失业：人在离职、找新工作、面试的过程中暂时没工作。',
     example: '你辞掉旧工作准备跳槽，花了三周面试、等 offer——这三周就是摩擦性失业。',
+    formula: '摩擦性失业 = 求职匹配时间导致的短期失业',
+    keyPoint: '摩擦性失业时间短、属正常流动；不是需求不足。',
+    mistake: '把摩擦性失业当成可被刺激政策消除的失业。',
+    related: ['macro-04-03'],
+    image: 'unemployment',
+    imageCaption: '摩擦性：换工作过渡期',
     quiz: {
       question: '摩擦性失业最典型的样子是什么？',
       options: [
@@ -42,6 +54,12 @@ export default [
     recall: '你的技能和岗位对不上，不是没岗位，是不匹配。',
     definition: '结构性失业是技能、地区或行业与岗位需求长期不匹配造成的失业：岗位存在，但工人干不了或去不了。',
     example: '传统纸媒衰落，报社记者会写稿但不会做数据分析——新媒体岗位招不到他，他也干不了。',
+    formula: '结构性失业 = 技能/地区错配导致的长期失业',
+    keyPoint: '结构性失业靠培训、转岗、信息匹配解决，不靠总需求刺激。',
+    mistake: '把结构性失业误判为周期性失业，用错政策。',
+    related: ['macro-04-02'],
+    image: 'unemployment',
+    imageCaption: '结构性：技能与岗位不匹配',
     quiz: {
       question: '结构性失业的根源是什么？',
       options: [
@@ -60,6 +78,12 @@ export default [
     recall: '经济不景气，需求不够，岗位没了。',
     definition: '周期性失业是经济衰退时总需求不足导致的失业：企业没订单，只能裁员。经济复苏后它会自然回落。',
     example: '金融危机来了，大家都不消费，工厂订单骤减开始裁员——等经济回暖，岗位又回来。',
+    formula: '周期性失业 = 实际失业率 − 自然失业率',
+    keyPoint: '周期性失业随经济周期波动，刺激总需求能缓解。',
+    mistake: '把周期性失业当成永久性失业；或反之用需求政策治结构问题。',
+    related: ['macro-04-05', 'micro-01-10'],
+    image: 'unemployment',
+    imageCaption: '周期性：随经济衰退而增加',
     quiz: {
       question: '周期性失业发生在什么时候？',
       options: [
@@ -78,6 +102,12 @@ export default [
     recall: '经济再健康，也总有人正在换工作或学新技能。',
     definition: '自然失业率 = 摩擦性失业 + 结构性失业之和，是经济处于正常状态时「消灭不掉」的那部分失业。',
     example: '即使经济非常好，也总有人刚离职、有人技能过时在转行——自然失业率大概在 4%–6% 左右。',
+    formula: '自然失业率 = 摩擦性失业率 + 结构性失业率',
+    keyPoint: '自然失业率是长期常态；政策只能让它缓慢改善。',
+    mistake: '期望失业率降到 0；忘了摩擦与结构失业「消灭不掉」。',
+    related: ['macro-04-02', 'macro-04-03'],
+    image: 'unemployment',
+    imageCaption: '摩擦 + 结构 = 自然失业率',
     quiz: {
       question: '自然失业率由什么构成？',
       options: [

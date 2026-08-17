@@ -6,6 +6,12 @@ export default [
     recall: '价格和需求量，方向相反。',
     definition: '其他条件不变时，一种物品价格上升，人们想买的数量下降；价格下降，想买的数量上升。',
     example: '奶茶从 15 元涨到 25 元，你一周买的杯数会变少；打折到 10 元，你会想多买几杯。',
+    formula: '需求定律：P↑ → Qd↓（其他条件不变）',
+    keyPoint: '需求定律是价格-数量最基础关系；「其他条件不变」是前提。',
+    mistake: '混淆「需求量变化」（沿曲线）与「需求变化」（曲线移动）。',
+    related: ['micro-03-04', 'micro-01-04'],
+    image: 'supply-demand',
+    imageCaption: '需求曲线向右下方倾斜',
     quiz: {
       question: '需求定律说的是什么关系？',
       options: [
@@ -24,6 +30,12 @@ export default [
     recall: '价格越高，越有人愿意生产。',
     definition: '其他条件不变时，一种物品价格上升，生产者愿意供应的数量增加；价格下降，供应减少。',
     example: '猪肉价格大涨，养猪户会愿意养更多猪；价格太低，养殖场宁可减少出栏。',
+    formula: '供给定律：P↑ → Qs↑（其他条件不变）',
+    keyPoint: '价格是生产者的激励：价高多供，价低少供。',
+    mistake: '把供给曲线画成向下倾斜；忽略「其他条件不变」。',
+    related: ['micro-03-05', 'micro-01-04'],
+    image: 'supply-demand',
+    imageCaption: '供给曲线向右上方倾斜',
     quiz: {
       question: '供给定律说的是什么关系？',
       options: [
@@ -42,6 +54,12 @@ export default [
     recall: '买家和卖家讨价还价后停下来的那个点。',
     definition: '当需求量等于供给量时，市场达到均衡——这时的价格叫均衡价格，数量叫均衡数量。',
     example: '一款球鞋供不应求，价格被抬高；抬高后买的人变少、想卖的人变多，直到买卖双方数量平衡。',
+    formula: '均衡：Qd = Qs；短缺时 P↑，过剩时 P↓',
+    keyPoint: '均衡是价格自发调节的落点；短缺与过剩都是「偏离均衡」的信号。',
+    mistake: '以为均衡价是政府定的；或以为短缺/过剩会一直持续。',
+    related: ['micro-03-06', 'micro-01-06'],
+    image: 'supply-demand',
+    imageCaption: 'S 与 D 的交点 E 为均衡',
     quiz: {
       question: '市场达到均衡意味着什么？',
       options: [
@@ -60,6 +78,12 @@ export default [
     recall: '价格变了是沿曲线走；其他因素变了，整条曲线搬家。',
     definition: '收入变化、偏好变化、相关商品价格变化、预期变化，都会让「每个价格对应的需求量」整体改变——曲线移动。',
     example: '工资涨了，你每个价位都愿意多买牛肉；朋友都在喝某款咖啡，你也会跟着买——需求整体变大了。',
+    formula: '需求移动因素：收入、偏好、相关品价格、预期',
+    keyPoint: '自己价格变化 → 沿曲线移动；其他因素 → 整条曲线移动。',
+    mistake: '把「价格变化」误当作需求曲线移动（高频易错）。',
+    related: ['micro-03-01', 'micro-04-04'],
+    image: 'supply-demand',
+    imageCaption: '需求右移：每个价格下需求量都变大',
     quiz: {
       question: '下面哪个因素会让需求曲线「移动」（而不是沿曲线移动）？',
       options: [
@@ -78,6 +102,12 @@ export default [
     recall: '成本、技术、预期变了，整条供给曲线搬家。',
     definition: '生产成本下降、技术进步、生产者预期变化，会让「每个价格对应的供给量」整体改变——供给曲线移动。',
     example: '种植技术改进让草莓成本下降，果农在每个价格都愿意多供一些草莓——供给整体变大了。',
+    formula: '供给移动因素：技术、投入品成本、预期、卖家数量',
+    keyPoint: '成本/技术变化移动供给曲线；价格变化只沿曲线移动。',
+    mistake: '把「成本上升」说成「供给增加」——成本上升供给减少（曲线左移）。',
+    related: ['micro-03-02', 'micro-04-05'],
+    image: 'supply-demand',
+    imageCaption: '供给右移：每个价格下供给量都变大',
     quiz: {
       question: '下面哪个因素会让供给曲线移动？',
       options: [
@@ -96,6 +126,12 @@ export default [
     recall: '买的人太多就涨价，卖的人太多就降价。',
     definition: '价格低于均衡时出现短缺（想买的人太多），价格被推高；价格高于均衡时出现过剩（卖不出去），价格被压低。',
     example: '演唱会门票按低价卖，排队的人远超座位数——这就是短缺，黄牛价自然被炒高。',
+    formula: '短缺：Qd > Qs → P↑；过剩：Qs > Qd → P↓',
+    keyPoint: '价格是纠偏机制：短缺推高价格，过剩压低价格，直到回到均衡。',
+    mistake: '以为政府「限价」能消除短缺——限价低于均衡恰恰制造短缺。',
+    related: ['micro-03-03', 'micro-01-07'],
+    image: 'supply-demand',
+    imageCaption: '价格低于均衡 → 短缺',
     quiz: {
       question: '市场上出现「短缺」（需求量 > 供给量）时，价格会怎样？',
       options: [

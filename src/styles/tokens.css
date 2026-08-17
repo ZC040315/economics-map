@@ -1,25 +1,22 @@
+/* ============================================================
+   Design Tokens · Economics Map
+   风格：Linear + Notion + Khan Academy 现代极简
+   主色：冷静靛蓝 · 现代无衬线 · 支持 Dark Mode
+   ============================================================ */
+
 :root {
-  /* 颜色 */
-  --color-bg: #f7f4ee;
-  --color-surface: #ffffff;
-  --color-text: #23262d;
-  --color-text-muted: #6d6f78;
-  --color-border: #e6e1d6;
-  --color-accent: #b7791f;
-  --color-learning: #2563eb;
-  --color-mastered: #16803c;
-  --color-review: #d97706;
-  --color-muted: #9aa0a6;
-  --color-selected: #f3ead8;
+  /* ---------- 字体 ---------- */
+  --font-display: "Inter", "Manrope", "PingFang SC", "Microsoft YaHei",
+    "Noto Sans SC", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC",
+    system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Cascadia Code", Consolas,
+    "Courier New", monospace;
 
-  /* 字体 */
-  --font-display: "Songti SC", "STSong", Georgia, "Noto Serif SC", serif;
-  --font-body: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui,
-    sans-serif;
-
-  /* 尺寸 */
-  --radius: 10px;
+  /* ---------- 尺寸 ---------- */
   --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -27,6 +24,96 @@
   --space-5: 24px;
   --space-6: 32px;
   --space-7: 48px;
+  --space-8: 64px;
 
-  --shadow-soft: 0 1px 3px rgba(35, 38, 45, 0.08);
+  --header-h: 60px;
+  --content-max: 1200px;
+  --z-nav: 30;
+  --z-overlay: 40;
+  --z-toast: 50;
+
+  --duration-fast: 0.15s;
+  --duration-base: 0.2s;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- 浅色（默认） ---------- */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f0ed;
+  --color-text: #1b1c1d;
+  --color-text-2: #5d5f66;
+  --color-text-3: #8a8d94;
+  --color-border: #e3e3df;
+  --color-border-strong: #cfcfca;
+
+  --color-accent: #4f46e5;
+  --color-accent-strong: #4338ca;
+  --color-accent-soft: rgba(79, 70, 229, 0.08);
+  --color-accent-border: rgba(79, 70, 229, 0.38);
+  --color-on-accent: #ffffff;
+
+  --color-learning: #2563eb;
+  --color-learning-soft: rgba(37, 99, 235, 0.1);
+  --color-learning-border: rgba(37, 99, 235, 0.4);
+  --color-mastered: #0f9d6e;
+  --color-mastered-soft: rgba(15, 157, 110, 0.1);
+  --color-mastered-border: rgba(15, 157, 110, 0.4);
+  --color-review: #d97706;
+  --color-review-soft: rgba(217, 119, 6, 0.1);
+  --color-review-border: rgba(217, 119, 6, 0.4);
+  --color-danger: #dc2626;
+  --color-danger-soft: rgba(220, 38, 38, 0.1);
+  --color-muted: #a1a1aa;
+  --color-track: #e8e8e4;
+  --color-selected: #eef0fe;
+  --color-video-bg: #18181b;
+
+  --shadow-soft: 0 1px 2px rgba(27, 28, 29, 0.05);
+  --shadow-md: 0 4px 16px rgba(27, 28, 29, 0.08);
+  --shadow-lg: 0 12px 32px rgba(27, 28, 29, 0.12);
+}
+
+/* ---------- 暗色 ---------- */
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #101012;
+  --color-surface: #17171a;
+  --color-surface-2: #1e1e22;
+  --color-text: #ececea;
+  --color-text-2: #a6a7ad;
+  --color-text-3: #71727a;
+  --color-border: #2a2a30;
+  --color-border-strong: #3a3a42;
+
+  --color-accent: #818cf8;
+  --color-accent-strong: #a5b4fc;
+  --color-accent-soft: rgba(129, 140, 248, 0.12);
+  --color-accent-border: rgba(129, 140, 248, 0.42);
+  --color-on-accent: #101012;
+
+  --color-learning: #60a5fa;
+  --color-learning-soft: rgba(96, 165, 250, 0.14);
+  --color-learning-border: rgba(96, 165, 250, 0.45);
+  --color-mastered: #34d399;
+  --color-mastered-soft: rgba(52, 211, 153, 0.14);
+  --color-mastered-border: rgba(52, 211, 153, 0.45);
+  --color-review: #fbbf24;
+  --color-review-soft: rgba(251, 191, 36, 0.14);
+  --color-review-border: rgba(251, 191, 36, 0.45);
+  --color-danger: #f87171;
+  --color-danger-soft: rgba(248, 113, 113, 0.14);
+  --color-muted: #71727a;
+  --color-track: #2a2a30;
+  --color-selected: rgba(129, 140, 248, 0.16);
+  --color-video-bg: #0b0b0d;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
 }

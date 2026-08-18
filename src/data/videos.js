@@ -1,5 +1,5 @@
 // 视频库：每章 1 个主视频 + 2 个备用，全部 ≤20 分钟
-// 数据经 B站官方 API 验证存在且时长合规（2026-08-16）
+// 数据经 B站官方 API 验证存在且时长合规（2026-08-18）
 export const videos = [
   {
     chapterId: 'micro-01',
@@ -26,6 +26,30 @@ export const videos = [
     },
   },
   {
+    chapterId: 'micro-02',
+    primary: {
+      title: '中山大学：模型神器Ⅰ——流量图与生产可能性边界（11 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 5,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=5',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=5&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '中山大学：经济学研究有神器？！——假设与模型（9 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 4,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=4',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=4&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '曼昆配套：用生产可能性边界计算机会成本（4 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 5,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=5',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=5&high_quality=1&danmaku=0',
+    },
+  },
+  {
     chapterId: 'micro-03',
     primary: {
       title: '10分钟速成经济学：供给与需求（10 分钟）',
@@ -47,6 +71,30 @@ export const videos = [
       page: 12,
       url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=12',
       embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=12&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'micro-05',
+    primary: {
+      title: '中山大学：政府如何干预市场价格？（9 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 16,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=16',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=16&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '中山大学：税收还有无谓损失？！（10 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 17,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=17',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=17&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '曼昆配套：用供需图说明税收的影响（4 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 25,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=25',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=25&high_quality=1&danmaku=0',
     },
   },
   {
@@ -98,6 +146,126 @@ export const videos = [
     },
   },
   {
+    chapterId: 'micro-07',
+    primary: {
+      title: '中山大学：此外部性非彼外部性（9 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 20,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=20',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=20&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '中山大学：如何消灭外部性（10 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 21,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=21',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=21&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '曼昆配套：负外部性与用税收内部化（9 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 43,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=43',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=43&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'micro-08',
+    primary: {
+      title: '曼昆配套：公共物品的有效分配（10 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 45,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=45',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=45&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '2022中级经济师：公共物品的融资与生产（12 分钟）',
+      bvid: 'BV1Vg411871A',
+      page: 33,
+      url: 'https://www.bilibili.com/video/BV1Vg411871A?p=33',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Vg411871A&page=33&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '曼昆配套：识别不同种类的商品（6 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 46,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=46',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=46&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'micro-09',
+    primary: {
+      title: '中山大学：生产者成本Ⅰ——小王奶茶铺的奥秘（9 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 23,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=23',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=23&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '知经KNOWECON：边际成本与平均成本（8 分钟）',
+      bvid: 'BV1dQ4y1m7ah',
+      page: 1,
+      url: 'https://www.bilibili.com/video/BV1dQ4y1m7ah',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1dQ4y1m7ah&page=1&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '曼昆配套：计算边际产品与各种成本指标（11 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 51,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=51',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=51&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'micro-10',
+    primary: {
+      title: '中山大学：完全竞争市场的效率——单个企业的决策（10 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 25,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=25',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=25&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '中山大学：完全竞争市场的效率——市场均衡（11 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 26,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=26',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=26&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '曼昆配套：竞争市场利润最大化与长短期均衡（9 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 58,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=58',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=58&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'micro-11',
+    primary: {
+      title: '中山大学：垄断是什么？（10 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 27,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=27',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=27&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '中山大学：寡头问题（8 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 30,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=30',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=30&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '曼昆配套：囚徒困境中的主导策略与纳什均衡（7 分钟）',
+      bvid: 'BV1uG4y1Y7fo',
+      page: 69,
+      url: 'https://www.bilibili.com/video/BV1uG4y1Y7fo?p=69',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1uG4y1Y7fo&page=69&high_quality=1&danmaku=0',
+    },
+  },
+  {
     chapterId: 'macro-01',
     primary: {
       title: '李扬老师：国内生产总值定义——最终产品（12 分钟）',
@@ -122,6 +290,30 @@ export const videos = [
     },
   },
   {
+    chapterId: 'macro-02',
+    primary: {
+      title: '中山大学：生活成本的测算（11 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 44,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=44',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=44&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '一张图读懂经济指标：解读 CPI 指标（14 分钟）',
+      bvid: 'BV13e4y1G7ti',
+      page: 1,
+      url: 'https://www.bilibili.com/video/BV13e4y1G7ti',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV13e4y1G7ti&page=1&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '中国物价其实很低：CPI 科普贴（9 分钟）',
+      bvid: 'BV19e4y1J7H8',
+      page: 1,
+      url: 'https://www.bilibili.com/video/BV19e4y1J7H8',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV19e4y1J7H8&page=1&high_quality=1&danmaku=0',
+    },
+  },
+  {
     chapterId: 'macro-03',
     primary: {
       title: '10分钟速成经济学：通货膨胀与泡沫（10 分钟）',
@@ -143,6 +335,78 @@ export const videos = [
       page: 1,
       url: 'https://www.bilibili.com/video/BV1pt4y1R78B',
       embed: 'https://player.bilibili.com/player.html?bvid=BV1pt4y1R78B&page=1&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'macro-05',
+    primary: {
+      title: '中山大学：货币是什么（11 分钟）',
+      bvid: 'BV1Tv421k7e7',
+      page: 49,
+      url: 'https://www.bilibili.com/video/BV1Tv421k7e7?p=49',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Tv421k7e7&page=49&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '2022中级经济师：中央银行的主要业务（16 分钟）',
+      bvid: 'BV1Vg411871A',
+      page: 52,
+      url: 'https://www.bilibili.com/video/BV1Vg411871A?p=52',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Vg411871A&page=52&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '2022中级经济师：货币供给与货币供应量（3 分钟）',
+      bvid: 'BV1Vg411871A',
+      page: 51,
+      url: 'https://www.bilibili.com/video/BV1Vg411871A?p=51',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Vg411871A&page=51&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'macro-06',
+    primary: {
+      title: '考研宏观【AD-AS】：总需求曲线推导的两种思路（9 分钟）',
+      bvid: 'BV1Km421G76F',
+      page: 1,
+      url: 'https://www.bilibili.com/video/BV1Km421G76F',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1Km421G76F&page=1&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '李扬老师：总供给曲线——短期/古典/常规（14 分钟）',
+      bvid: 'BV1QvSXYYEnH',
+      page: 1,
+      url: 'https://www.bilibili.com/video/BV1QvSXYYEnH',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1QvSXYYEnH&page=1&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '李扬老师：总需求曲线的移动（13 分钟）',
+      bvid: 'BV1r4yDYYE1Y',
+      page: 1,
+      url: 'https://www.bilibili.com/video/BV1r4yDYYE1Y',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1r4yDYYE1Y&page=1&high_quality=1&danmaku=0',
+    },
+  },
+  {
+    chapterId: 'macro-07',
+    primary: {
+      title: '期末复习：财政政策 vs 货币政策（8 分钟）',
+      bvid: 'BV1ZMjH6NEUa',
+      page: 1,
+      url: 'https://www.bilibili.com/video/BV1ZMjH6NEUa',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1ZMjH6NEUa&page=1&high_quality=1&danmaku=0',
+    },
+    fallback: {
+      title: '10分钟速成经济学：财政政策（13 分钟）',
+      bvid: 'BV1NVXnYgEGD',
+      page: 7,
+      url: 'https://www.bilibili.com/video/BV1NVXnYgEGD?p=7',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1NVXnYgEGD&page=7&high_quality=1&danmaku=0',
+    },
+    fallback2: {
+      title: '10分钟速成经济学：货币政策（9 分钟）',
+      bvid: 'BV1NVXnYgEGD',
+      page: 9,
+      url: 'https://www.bilibili.com/video/BV1NVXnYgEGD?p=9',
+      embed: 'https://player.bilibili.com/player.html?bvid=BV1NVXnYgEGD&page=9&high_quality=1&danmaku=0',
     },
   },
   {

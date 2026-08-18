@@ -8,8 +8,8 @@ const VALID_DIFFICULTIES = ['basic', 'advanced', 'challenge']
 const VALID_TYPES = ['choice', 'truefalse', 'essay', 'report']
 
 describe('分层题库', () => {
-  it('7 章都有题库，每章至少 10 题', () => {
-    expect(questionBanks).toHaveLength(7)
+  it('全部章节都有题库，每章至少 10 题', () => {
+    expect(questionBanks).toHaveLength(18)
     for (const bank of questionBanks) {
       expect(
         bank.questions.length,
